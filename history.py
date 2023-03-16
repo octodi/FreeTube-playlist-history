@@ -12,7 +12,10 @@ input_file = input('Enter the input file path: ')
 # check if input file is a JSON file
 if os.path.splitext(input_file)[1] == '.json':
     with open(input_file) as f:
-        video_ids = [re.search(r'v=(\S{11})', item['titleUrl']).group(1) for item in json.load(f)]
+        video_ids = [re.search(r'v=(\S{11}?)(&|$)', item.get('titleUrl', '')).group(1) if re.search(r'v=(\S{11}?)(&|$)', item.get('titleUrl', '')) else None for item in json.load(f) if 'titleUrl' in item and item['titleUrl'] is not None]
+
+
+
 else:
     with open(input_file, "r") as f:
         html_content = f.read()
