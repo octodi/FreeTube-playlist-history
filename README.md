@@ -16,6 +16,12 @@ chmod +x bin_name
 ```
 <h4>Note :- I will prefer you to use Go [binary or source] as it will function comparatively faster <br> Grab your Invidious API from here : https://api.invidious.io/ </h4>
 
+<h3> Remove Starting lines from CSV </h3>
+<h4> For smooth functioning remove starting lines from the csv file </h4>
+<p> Like this :- <p1>
+
+![alt text](https://github.com/octodi/FreeTube-playlist-history/blob/main/img/Untitled.png)
+
 <h3> Some benchmarks <h3>
 
 ![alt text](https://github.com/octodi/FreeTube-playlist-history/blob/main/img/1.png)
