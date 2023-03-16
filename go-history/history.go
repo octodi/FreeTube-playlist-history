@@ -34,23 +34,29 @@ func main() {
 
     if filepath.Ext(input_file) == ".json" {
         jsonFile, err := os.Open(input_file)
-        if err != nil {
-            panic(err)
-        }
-        defer jsonFile.Close()
+    if err != nil {
+        panic(err)
+    }
+    defer jsonFile.Close()
 
-        var items []map[string]interface{}
-        jsonParser := json.NewDecoder(jsonFile)
-        if err = jsonParser.Decode(&items); err != nil {
-            panic(err)
-        }
+    var items []map[string]interface{}
+    jsonParser := json.NewDecoder(jsonFile)
+    if err = jsonParser.Decode(&items); err != nil {
+        panic(err)
+    }
 
-        re := regexp.MustCompile(`v=(\S{11})`)
-        for _, item := range items {
-            titleUrl := item["titleUrl"].(string)
-            match := re.FindStringSubmatch(titleUrl)
-            video_ids = append(video_ids, match[1])
+    re := regexp.MustCompile(`v=(\S{11})`)
+    for _, item := range items {
+        titleUrl, ok := item["titleUrl"].(string)
+        if !ok {
+            continue // skip JSON object where titleUrl key is not found
         }
+        match := re.FindStringSubmatch(titleUrl)
+        if len(match) < 2 {
+            continue // skip JSON object where regular expression v=(\S{11}) is not matched
+        }
+        video_ids = append(video_ids, match[1])
+    }
 
     } else {
         // read contents of HTML file
