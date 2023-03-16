@@ -27,6 +27,7 @@ chmod +x bin_name
 ![alt text](https://github.com/octodi/FreeTube-playlist-history/blob/main/img/1.png)
 ![alt text](https://github.com/octodi/FreeTube-playlist-history/blob/main/img/2.png)
 
+# Ditch Google
 # Suggest me a better repo name !please
 
 
