@@ -14,7 +14,7 @@ pip install requests tqdm
 ```bash
 chmod +x bin_name
 ```
-<h4>Note :- I will prefer you to use Go [binary or source] as it will function comparatively faster <br> Grab your Invidious API from here : https://api.invidious.io/ </h4>
+<h4>Note :- I will prefer you to use Go [binary or source] as it will function comparatively faster <br> Grab your Invidious API from here : https://api.invidious.io/ <br> You could get more 503 with go-history/faster if the file is large </h4>
 
 <h3> Remove Starting lines from CSV </h3>
 <h4> For smooth functioning remove starting lines from the csv file </h4>
