@@ -114,7 +114,8 @@ func getVideoIDsFromCSV(path string) ([]string, error) {
     for scanner.Scan() {
         line := scanner.Text()
         fields := strings.Split(line, ",")
-        ids = append(ids, fields[0])
+        id := strings.TrimSpace(fields[0])
+        ids = append(ids, id)
     }
 
     if err := scanner.Err(); err != nil {
