@@ -4,7 +4,7 @@
 <h3>Prerequisite for Python<h3>
 
 ```bash
-pip install requests tqdm
+pip install httpx tqdm
 ```
 
 <h3>Prerequisite for Go<h3>
