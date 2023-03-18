@@ -72,9 +72,6 @@ func main() {
                 video["isLive"] = false
                 video["paid"] = false
                 video["type"] = "video"
-                video["channel_url"] = invidiousAPI + "/user/" + bodyMap["author"].(string)
-                video["thumbnail_url"] = invidiousAPI + "/vi/" + bodyMap["videoId"].(string) + "/maxresdefault.jpg"
-                video["external_player"] = invidiousAPI + "/watch?v=" + bodyMap["videoId"].(string)
                 videoDataCh <- video
             } else {
                 log.Printf("Failed to fetch video data for video ID %s. Status code: %d\n", id, resp.StatusCode)
